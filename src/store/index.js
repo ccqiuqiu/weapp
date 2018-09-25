@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import createLogger from 'vuex/dist/logger'
+import common from './common'
 
 Vue.use(Vuex)
 
@@ -10,15 +11,8 @@ const store = new Vuex.Store({
   state: {
     count: 0
   },
-  mutations: {
-    increment: (state, num) => {
-      const obj = state
-      obj.count += num
-    },
-    decrement: (state) => {
-      const obj = state
-      obj.count -= 1
-    }
+  modules: {
+    common
   },
   plugins: process.env.NODE_ENV !== 'production' ? [createLogger({collapsed: false})] : []
 })

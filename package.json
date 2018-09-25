@@ -11,6 +11,7 @@
     "lint": "eslint --ext .js,.vue src"
   },
   "dependencies": {
+    "dayjs": "^1.7.5",
     "flyio": "^0.6.1",
     "iview-weapp": "^2.0.0",
     "minapp-api-promise": "^1.0.2",

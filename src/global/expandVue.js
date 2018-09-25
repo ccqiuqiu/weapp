@@ -12,6 +12,7 @@ export default {
     Vue.prototype.$wx = WXP
     Vue.prototype.$api = api
     Vue.prototype.$utils = utils
+    Vue.prototype.$date = utils.dayjs
   },
   $wx: WXP
 }

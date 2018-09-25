@@ -2,7 +2,9 @@
   "pages": [
     "pages/index",
     "pages/login",
-    "pages/counter"
+    "pages/travel",
+    "pages/message",
+    "pages/user"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -16,12 +18,26 @@
       {
         "pagePath": "pages/index",
         "text": "首页",
-        "iconPath": "./static/img/pc.png",
-        "selectedIconPath": "./static/img/pc.png"
+        "iconPath": "./static/img/ticket2.png",
+        "selectedIconPath": "./static/img/ticket.png"
       },
       {
-        "pagePath": "pages/counter",
-        "text": "counter"
+        "pagePath": "pages/travel",
+        "text": "航程",
+        "iconPath": "./static/img/travel2.png",
+        "selectedIconPath": "./static/img/travel.png"
+      },
+      {
+        "pagePath": "pages/message",
+        "text": "消息",
+        "iconPath": "./static/img/message2.png",
+        "selectedIconPath": "./static/img/message.png"
+      },
+      {
+        "pagePath": "pages/user",
+        "text": "我的",
+        "iconPath": "./static/img/user2.png",
+        "selectedIconPath": "./static/img/user.png"
       }
     ]
   }

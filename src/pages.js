@@ -10,28 +10,29 @@ module.exports = [
       enablePullDownRefresh: true,
       usingComponents: {
         'i-button': '../../static/iView/button/index',
-        'i-icon': '../../static/iView/icon/index'
+        'i-tabs': '../../static/iView/tabs/index',
+        'i-tab': '../../static/iView/tab/index',
+        'i-badge': '../../static/iView/badge/index'
       }
     }
   },
   //
   {
-    path: 'pages/login',
+    path: 'pages/travel',
     config: {
-      navigationBarTitleText: '登录',
-      usingComponents: {
-        'i-input': '../../static/iView/input/index',
-        'i-button': '../../static/iView/button/index',
-        'i-panel': '../../static/iView/panel/index',
-        'i-message': '../../static/iView/message/index'
-      }
+      navigationBarTitleText: '航程'
     }
   },
-  //
   {
-    path: 'pages/counter',
+    path: 'pages/message',
     config: {
-      navigationBarTitleText: 'counter'
+      navigationBarTitleText: '消息'
+    }
+  },
+  {
+    path: 'pages/user',
+    config: {
+      navigationBarTitleText: '我的'
     }
   },
   // 分包

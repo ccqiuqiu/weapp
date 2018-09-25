@@ -2,19 +2,15 @@
   <div>
     <ul class="container log-list">
       <li v-for="(log, index) in logs" :class="{ red: aa }" :key="index" class="log-item">
-        <card :text="(index + 1) + ' . ' + log"></card>
+        <div :text="(index + 1) + ' . ' + log"></div>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-import card from '@/components/card'
 
 export default {
-  components: {
-    card
-  },
 
   data () {
     return {
