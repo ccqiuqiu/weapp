@@ -13,7 +13,7 @@ Vue.use(expandVue)
 
 const app = new Vue({
   store,
-  ...App
+  ...App,
 })
 app.$mount()
 export default app

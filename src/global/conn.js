@@ -20,10 +20,10 @@ instance.config.baseURL = 'http://127.0.0.1:3000'
 const defaultConfig = {
   showLoading: true, // 是否展示loading
   showErrorTip: true, // 是否展示默认错误提示
-  limitTime: 300 // 接口请求在此时间内完成则不显示loading
+  limitTime: 300, // 接口请求在此时间内完成则不显示loading
 }
 const errorMap = {
-  500: '服务器异常'
+  500: '服务器异常',
 }
 
 // 添加请求拦截器
@@ -57,7 +57,7 @@ instance.interceptors.response.use(
 let promises = []
 let loadingTimer = null
 
-export default function (method, url, data, config) {
+export default function(method, url, data, config) {
   const req = instance.request(url, data, {method})
   config = {...defaultConfig, ...config}
   // 开启loading

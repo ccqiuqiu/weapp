@@ -16,7 +16,7 @@ export default {
       cityCode: 'KWE',
       area: 'CN',
       airPortName: '龙洞堡国际机场T2航站楼',
-      phonetic: 'GUIYANG'
+      phonetic: 'GUIYANG',
     },
     arrAirPort: {
       cityName: '铜仁',
@@ -24,26 +24,30 @@ export default {
       cityCode: 'TEN',
       area: 'CN',
       airPortName: '凤凰机场',
-      phonetic: 'TONGREN'
-    }
+      phonetic: 'TONGREN',
+    },
+    selectedFlight: {},
   },
   mutations: {
-    changeTripType (state, params) {
+    changeTripType(state, params) {
       state.tripType = params
     },
-    changeAirPort (state) {
+    changeAirPort(state) {
       [state.depAirPort, state.arrAirPort] = [state.arrAirPort, state.depAirPort]
     },
-    updateFlightDate (state, params) {
+    updateFlightDate(state, params) {
       if (params.goDate) state.goDate = params.goDate
       if (params.backDate) state.backDate = params.backDate
     },
-    updateAirPort (state, airPort) {
+    updateAirPort(state, airPort) {
       state.airPort = airPort
-    }
+    },
+    selectFlight(state, flight) {
+      state.selectedFlight = flight
+    },
   },
   actions: {
-    async getAirPort ({commit}) {
+    async getAirPort({commit}) {
       let airPort = $wx.getStorageSync('airPort')
       if (!airPort) {
         const {data} = await api.getAirPort()
@@ -53,6 +57,6 @@ export default {
         }
       }
       commit('updateAirPort', airPort)
-    }
-  }
+    },
+  },
 }

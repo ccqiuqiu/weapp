@@ -6,12 +6,12 @@
 <script>
   export default {
     components: {},
-    data () {
+    data() {
       return {
-        a: 1
+        a: 1,
       }
     },
-    methods: {}
+    methods: {},
   }
 </script>
 

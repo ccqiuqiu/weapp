@@ -1,10 +1,5 @@
 {
   "pages": [
-    "pages/index",
-    "pages/login",
-    "pages/travel",
-    "pages/message",
-    "pages/user"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -23,7 +18,7 @@
       },
       {
         "pagePath": "pages/travel",
-        "text": "航程",
+        "text": "行程",
         "iconPath": "./static/img/travel2.png",
         "selectedIconPath": "./static/img/travel.png"
       },

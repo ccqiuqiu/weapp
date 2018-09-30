@@ -7,12 +7,12 @@ import * as utils from './../assets/utils'
 import api from './api'
 
 export default {
-  install (Vue) {
+  install(Vue) {
     Vue.api = api
     Vue.prototype.$wx = WXP
     Vue.prototype.$api = api
     Vue.prototype.$utils = utils
     Vue.prototype.$date = utils.dayjs
   },
-  $wx: WXP
+  $wx: WXP,
 }

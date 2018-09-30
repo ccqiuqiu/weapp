@@ -50,18 +50,18 @@ import { mapState, mapMutations, mapActions } from 'vuex'
 
 export default {
   mixins: [mixins.base],
-  data () {
+  data() {
     return {
       current: 1,
       imgUrls: [
         'http://img02.tooopen.com/images/20150928/tooopen_sy_143912755726.jpg',
         'http://img06.tooopen.com/images/20160818/tooopen_sy_175866434296.jpg',
-        'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg'
+        'http://img06.tooopen.com/images/20160818/tooopen_sy_175833047715.jpg',
       ],
       startDate: this.$date().format('YYYY-MM-DD'),
       depCity: '贵阳',
       translate: 0,
-      rotate: false
+      rotate: false,
     }
   },
 
@@ -71,23 +71,23 @@ export default {
       goDate: state => state.common.goDate,
       backDate: state => state.common.backDate,
       depAirPort: state => state.common.depAirPort,
-      arrAirPort: state => state.common.arrAirPort
+      arrAirPort: state => state.common.arrAirPort,
     }),
-    goWeek () {
+    goWeek() {
       return this.$date(this.goDate).format('dddd')
     },
-    backWeek () {
+    backWeek() {
       return this.$date(this.backDate).format('dddd')
-    }
+    },
   },
 
   methods: {
     ...mapMutations(['changeTripType', 'changeAirPort', 'updateFlightDate']),
     ...mapActions(['getAirPort']),
-    handleChange ({target}) {
+    handleChange({target}) {
       this.changeTripType(Number(target.key))
     },
-    handleChangeAirPort () {
+    handleChangeAirPort() {
       this.rotate = !this.rotate
       this.translate = 1
       setTimeout(() => {
@@ -95,24 +95,19 @@ export default {
         this.translate = 0
       }, 300)
     },
-    goDateChange ({target}) {
+    goDateChange({target}) {
       this.updateFlightDate({goDate: target.value})
     },
-    backDateChange ({target}) {
+    backDateChange({target}) {
       this.updateFlightDate({backDate: target.value})
-    }
+    },
+    search() {
+      this.$router.push('/pages/flight')
+    },
   },
-
-  async onLoad () {
-    // // 调用应用实例的方法获取全局数据
-    // this.getUserInfo()
-    // console.log(this.$wx, this.$store, this.$router)
-    // const re = await this.$wx.getNetworkType()
-    // console.log(re)
-    // const {data, error} = await this.$api.test()
-    // console.log(data, error)
+  async onLoad() {
     this.getAirPort()
-  }
+  },
 }
 </script>
 

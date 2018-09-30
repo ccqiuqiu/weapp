@@ -27,34 +27,34 @@
 <script>
   export default {
     components: {},
-    data () {
+    data() {
       return {
         isLogin: true,
         loading: false,
         user: {
           name: '18688409494',
           password: '123456',
-          password2: '123456'
-        }
+          password2: '123456',
+        },
       }
     },
     computed: {
     },
     watch: {
       isLogin: {
-        handler: function (val) {
+        handler: function(val) {
           this.$utils.setTitle(val ? '登录' : '注册')
-        }
-      }
+        },
+      },
     },
     methods: {
-      changeLoginOrReg () {
+      changeLoginOrReg() {
         this.isLogin = !this.isLogin
       },
-      inputChange (key, e) {
+      inputChange(key, e) {
         this.user[key] = e.target.detail.value
       },
-      async onLogin () {
+      async onLogin() {
         if (this.loading) {
           return
         }
@@ -67,14 +67,14 @@
           this.loading = false
         }
       },
-      onReg () {
+      onReg() {
         if (this.loading) {
           return
         }
         this.loading = true
         this.allowReg = true
       },
-      async onGetUserInfo (info) {
+      async onGetUserInfo(info) {
         if (!this.allowReg) {
           return
         }
@@ -87,15 +87,15 @@
           this.loading = false
         }
       },
-      success (token, msg) {
+      success(token, msg) {
         this.$wx.setStorageSync('token', token)
         this.$utils.message(msg, 'success', 1000)
         setTimeout(() => {
           this.loading = false
           this.$router.push({path: '/pages/index', isTab: true})
         }, 1000)
-      }
-    }
+      },
+    },
   }
 </script>
 

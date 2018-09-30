@@ -4,8 +4,8 @@
 
 export default {
   base: {
-    created () {
+    created() {
       console.log('mixins')
-    }
-  }
+    },
+  },
 }

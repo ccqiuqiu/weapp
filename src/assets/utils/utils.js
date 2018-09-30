@@ -3,14 +3,14 @@
  */
 
 // 日期判断
-export function isDate (obj) {
+export function isDate(obj) {
   return Object.prototype.toString.call(obj) === '[object Date]'
 }
 // 对象判断
-export function isObj (obj) {
+export function isObj(obj) {
   return Object.prototype.toString.call(obj) === '[object Object]'
 }
 // 空对象判断
-export function isEmptyObject (obj) {
+export function isEmptyObject(obj) {
   return isObj(obj) && Object.keys(obj).length <= 0
 }

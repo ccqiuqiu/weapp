@@ -12,16 +12,16 @@
 
 export default {
 
-  data () {
+  data() {
     return {
-      logs: []
+      logs: [],
     }
   },
 
-  created () {
+  created() {
     const logs = (wx.getStorageSync('logs') || [])
     this.logs = logs.map(log => new Date(log))
-  }
+  },
 }
 </script>
 

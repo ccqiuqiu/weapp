@@ -9,12 +9,12 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
   state: {
-    count: 0
+    count: 0,
   },
   modules: {
-    common
+    common,
   },
-  plugins: process.env.NODE_ENV !== 'production' ? [createLogger({collapsed: false})] : []
+  plugins: process.env.NODE_ENV !== 'production' ? [createLogger({collapsed: false})] : [],
 })
 
 export default store

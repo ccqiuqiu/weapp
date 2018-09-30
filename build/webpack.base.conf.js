@@ -5,7 +5,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const utils = require('./utils')
 const config = require('../config')
 const vueLoaderConfig = require('./vue-loader.conf')
-// const ImportComponent = require('import-weapp-component')
+const ImportComponent = require('import-weapp-component')
 
 function resolve (dir) {
   return path.join(__dirname, '..', dir)
@@ -87,11 +87,11 @@ module.exports = {
     ]
   },
   plugins: [
-    // new ImportComponent({
-    //   src: path.resolve(__dirname, '../src'), // 引用组件或原生页面的目录
-    //   native: true, // 将 src 目录中的原生 page 复制到 dist
-    //   usingComponents: path.resolve(__dirname, '../src/pages.js') // mpvue-entry 配置路径
-    // }),
+    new ImportComponent({
+      src: path.resolve(__dirname, '../src/iView/button'), // 引用组件或原生页面的目录
+      native: true, // 将 src 目录中的原生 page 复制到 dist
+      usingComponents: path.resolve(__dirname, '../src/pages.js') // mpvue-entry 配置路径
+    }),
     new MpvuePlugin(),
     new MpvueEntry(),
     new CopyWebpackPlugin([
